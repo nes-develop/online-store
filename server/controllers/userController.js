@@ -3,6 +3,7 @@ const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const { User, Basket } = require('../models/models')
+const { use } = require('bcrypt/promises')
 
 const generateJwt = (id, email, role) => {
     return jwt.sign(
@@ -37,8 +38,18 @@ class UserController {
         return res.json({ token })
     }
     //функция входа
-    async login(req, res) {
-
+    async login(req, res, next) {
+        const { email, password } = req.body
+        const user = await User.findOne({ where: { email } })
+        if (!user) {
+            return next(ApiError.internal('Пользователь не найден'))
+        }
+        let comparePassword = bcrypt.compareSync(password, user.password) //1 пароль введеный, второй хэшированый из БД
+        if (!comparePassword) {
+            return next(ApiError.internal('Указан неверный пароль'))
+        }
+        const token = generateJwt(user.id, user.email, user.role)
+        return res.json({ token })
     }
     // //функция проверки входа
     async check(req, res, next) {
