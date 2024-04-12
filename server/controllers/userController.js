@@ -53,14 +53,20 @@ class UserController {
     }
     // //функция проверки входа
     async check(req, res, next) {
-        // const query = req.query
-        //res.json(query) //если хотим весь запрос посмотреть query, если конкретный то query.id
-        const { id } = req.query //Деструктуризация
-        if (!id) {
-            return next(ApiError.badRequest('Не задан ID'))
-        }
-        res.json(id) //Деструктуризация
+        const token = generateJwt(req.user.id, req.user.email, req.user.role)
+        return res.json({ token })
     }
+
+
+    // async check(req, res, next) {
+    //     // const query = req.query
+    //     //res.json(query) //если хотим весь запрос посмотреть query, если конкретный то query.id
+    //     const { id } = req.query //Деструктуризация
+    //     if (!id) {
+    //         return next(ApiError.badRequest('Не задан ID'))
+    //     }
+    //     res.json(id) //Деструктуризация
+    // }
 
     //функция проверки входа, тестим метод check
     // async check(req, res) {

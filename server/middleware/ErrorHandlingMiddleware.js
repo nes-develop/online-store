@@ -5,5 +5,5 @@ module.exports = function (err, req, res, next) {
         return res.status(err.status).json({ message: err.message })
     }
 
-    return res.status(500).json({ message: "Непредивденная ошибка" }) //если нет ошибке в классе ApiError
+    return res.status(500).json({ message: "Непредвиденная ошибка" }) //если нет ошибке в классе ApiError
 }
