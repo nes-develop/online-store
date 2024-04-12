@@ -18,7 +18,7 @@ const BasketDevice = sequelize.define('basket_device', {
 
 const Device = sequelize.define('device', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.STRING, unique: true, allowNull: false }, //allowNull указывает, допускает ли поле отсутствие значение
+    name: { type: DataTypes.STRING, unique: true, allowNull: false }, //allowNull указывает, допускает отсутствие значения в поле
     price: { type: DataTypes.INTEGER, allowNull: false },
     rating: { type: DataTypes.INTEGER, defaultValue: 0 },
     img: { type: DataTypes.STRING, allowNull: false },
@@ -72,7 +72,7 @@ Rating.belongsTo(Device)
 Device.hasMany(BasketDevice)
 BasketDevice.belongsTo(Device)
 
-Device.hasMany(DeviceInfo)
+Device.hasMany(DeviceInfo, { as: 'info' }) //поле массива у характеристик, добавили позже)
 DeviceInfo.belongsTo(Device)
 
 //многие ко многим, табличка выше создана TypeBrand

@@ -3,7 +3,10 @@ const express = require('express')
 const sequelize = require('./db')
 const models = require('./models/models')
 const cors = require('cors')
+const fileUpload = require('express-fileupload')
 const router = require('./routes/index')
+const errorHandler = require('./middleware/ErrorHandlingMiddleware')
+const path = require('path')
 
 
 const PORT = process.env.PORT || 3000
@@ -11,9 +14,14 @@ const PORT = process.env.PORT || 3000
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(express.static(path.resolve(__dirname, 'static'))) //чтобы отдавать статику
+app.use(fileUpload({}))
 app.use('/api', router)
 
-//для тестирования get
+//Обработка ошибки, идет самым последним
+app.use(errorHandler)
+
+// //для тестирования get
 // app.get('/', (req, res) => {
 //     res.status(200).json({ message: 'WORKING!!!' })
 // })
