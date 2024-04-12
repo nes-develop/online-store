@@ -76,6 +76,7 @@ Device.hasMany(DeviceInfo, { as: 'info' }) //поле массива у хара
 DeviceInfo.belongsTo(Device)
 
 //многие ко многим, табличка выше создана TypeBrand
+//
 Type.belongsToMany(Brand, { through: TypeBrand })
 Brand.belongsToMany(Type, { through: TypeBrand })
 
