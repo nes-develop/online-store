@@ -70,6 +70,7 @@ class DeviceController {
             },
         )
         return res.json(device)
+        
     }
 }
 
