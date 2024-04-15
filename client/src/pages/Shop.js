@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+
 
 const Shop = () => {
     return (
@@ -7,3 +9,7 @@ const Shop = () => {
 }
 
 export default Shop
+
+
+
+

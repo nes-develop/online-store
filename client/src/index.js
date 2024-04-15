@@ -1,14 +1,24 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
-import ReactDOM from 'react-dom/client';
-
-// import './index.css';
+import React, { createContext } from 'react';
+// import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import UserStore from './store/UserStore';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+export const Context = createContext(null)
+
+ReactDOM.render(
+  <Context.Provider value={{
+    user: new UserStore()
+  }}>
     <App />
-  </React.StrictMode>
-);
+  </Context.Provider>,
+  document.getElementById('root')
+)
+
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
