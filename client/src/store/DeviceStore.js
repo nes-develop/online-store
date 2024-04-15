@@ -23,17 +23,25 @@ export default class DeviceStore {
         makeAutoObservable(this)
     }
     // ниже меняем состояние 
-    setIsAuth(bool) {
-        this._isAuth = bool
+    setTypes(types) {
+        this._types = types
     }
-    setUser(user) {
-        this._user = user
+    setBrands(brands) {
+        this._brands = brands
     }
+    setBrands(devices) {
+        this._devices = devices
+    }
+
+
     //функции для получения параметров из нашего состояния
-    get isAuth() {
-        return this._isAuth
+    get types() {
+        return this._types
     }
-    get user() {
-        return this._user
+    get brands() {
+        return this._brands
+    }
+    get devices() {
+        return this._devices
     }
 }

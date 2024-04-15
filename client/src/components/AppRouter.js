@@ -8,6 +8,7 @@ import { Context } from '../index';
 
 const AppRouter = () => {
     // const isAuth = false //заглушка для авторизации
+    
     const { user } = useContext(Context)
 
     console.log(user)
