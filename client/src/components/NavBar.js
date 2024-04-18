@@ -8,12 +8,14 @@ import { SHOP_ROUTE } from '../utils/consts';
 import {Button} from 'react-bootstrap';
 import { observer } from 'mobx-react-lite';
 
+//observer для отслеживания статуса
 const NavBar = observer( () => {
     const { user } = useContext(Context)
     return (
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
                 <NavLink style={{ color: 'white' }} to={SHOP_ROUTE}>Купи Девайс</NavLink>
+                {/* проверка на авторизацию и отображение админки */}
                 {user.isAuth ?
                     <Nav className="ml-auto" style={{ color: 'white' }}>
                         <Button variant={"outline-light"}>Админ панель</Button>
