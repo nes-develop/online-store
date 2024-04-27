@@ -16,11 +16,15 @@ export default class DeviceStore {
             { id: 4, name: "Asus" },
         ]
         this._devices = [
-            { id: 1, name: "15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
-            { id: 2, name: "15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
-            { id: 3, name: "15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
-            { id: 4, name: "15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
-            { id: 5, name: "15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" }
+            { id: 1, name: "Iphone 15 pro", price: 120000, rating: 5, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 2, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 3, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 4, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 5, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 6, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 7, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 8, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
+            { id: 9, name: "Iphone 15 pro", price: 120000, rating: 0, img: "96a724e0-6415-4cca-99c5-e0d1198342bd.jpg" },
         ]
         //выбранный тип и брэнд
         this._selectedType = {}
